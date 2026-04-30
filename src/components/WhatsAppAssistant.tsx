@@ -23,10 +23,12 @@ export default function WhatsAppAssistant() {
     e.preventDefault();
     
     const text = `Hola YunicellServer, necesito ayuda:
+
 📌 *Servicio:* ${formData.servicio}
 👤 *Nombre:* ${formData.nombre}
 📱 *Número:* ${formData.numero}
-${formData.mensaje ? `💬 *Mensaje:* ${formData.mensaje}` : ''}`;
+${formData.mensaje ? `💬 *Mensaje:* ${formData.mensaje}\n` : ''}
+Por favor confirmarme disponibilidad. ¡Gracias!`;
 
     const encodedText = encodeURIComponent(text);
     window.open(`https://wa.me/34634181266?text=${encodedText}`, '_blank');
