@@ -6,6 +6,7 @@ export default function BuyCreditsModal({ isOpen, onClose }: { isOpen: boolean; 
   const [formData, setFormData] = useState({
     nombre: '',
     numero: '',
+    usuario: '',
     herramienta: '',
     cantidad: '',
     metodoPago: 'CUP 🇨🇺'
@@ -31,6 +32,7 @@ export default function BuyCreditsModal({ isOpen, onClose }: { isOpen: boolean; 
 👤 *Nombre:* ${formData.nombre}
 📱 *Número:* ${formData.numero}
 🛠️ *Herramienta:* ${formData.herramienta}
+🧑‍💻 *Usuario:* ${formData.usuario}
 🪙 *Cantidad:* ${formData.cantidad} créditos
 💰 *Método de Pago:* ${formData.metodoPago}
 💵 *Total a Pagar:* ${totalToPay.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}
@@ -74,32 +76,34 @@ Por favor confirmarme disponibilidad. ¡Gracias!`;
             </div>
 
             <form onSubmit={handleSubmit} className="p-6 space-y-5">
-              <div>
-                <label className="block text-sm font-medium text-slate-300 mb-1.5 flex items-center gap-2">
-                  <User size={16} /> Nombre
-                </label>
-                <input 
-                  type="text" 
-                  required
-                  value={formData.nombre}
-                  onChange={(e) => setFormData({...formData, nombre: e.target.value})}
-                  className="w-full bg-slate-950 border border-white/10 rounded-xl px-4 py-2.5 text-white focus:outline-none focus:border-yellow-500 focus:ring-1 focus:ring-yellow-500 transition-all"
-                  placeholder="Tu nombre"
-                />
-              </div>
+              <div className="grid grid-cols-2 gap-4">
+                <div>
+                  <label className="block text-sm font-medium text-slate-300 mb-1.5 flex items-center gap-2">
+                    <User size={16} /> Nombre
+                  </label>
+                  <input 
+                    type="text" 
+                    required
+                    value={formData.nombre}
+                    onChange={(e) => setFormData({...formData, nombre: e.target.value})}
+                    className="w-full bg-slate-950 border border-white/10 rounded-xl px-4 py-2.5 text-white focus:outline-none focus:border-yellow-500 focus:ring-1 focus:ring-yellow-500 transition-all"
+                    placeholder="Tu nombre"
+                  />
+                </div>
 
-              <div>
-                <label className="block text-sm font-medium text-slate-300 mb-1.5 flex items-center gap-2">
-                  <Phone size={16} /> Número
-                </label>
-                <input 
-                  type="tel" 
-                  required
-                  value={formData.numero}
-                  onChange={(e) => setFormData({...formData, numero: e.target.value})}
-                  className="w-full bg-slate-950 border border-white/10 rounded-xl px-4 py-2.5 text-white focus:outline-none focus:border-yellow-500 focus:ring-1 focus:ring-yellow-500 transition-all"
-                  placeholder="+1 234 567 8900"
-                />
+                <div>
+                  <label className="block text-sm font-medium text-slate-300 mb-1.5 flex items-center gap-2">
+                    <Phone size={16} /> Número
+                  </label>
+                  <input 
+                    type="tel" 
+                    required
+                    value={formData.numero}
+                    onChange={(e) => setFormData({...formData, numero: e.target.value})}
+                    className="w-full bg-slate-950 border border-white/10 rounded-xl px-4 py-2.5 text-white focus:outline-none focus:border-yellow-500 focus:ring-1 focus:ring-yellow-500 transition-all"
+                    placeholder="+1 234 567 8900"
+                  />
+                </div>
               </div>
 
               <div>
@@ -113,6 +117,20 @@ Por favor confirmarme disponibilidad. ¡Gracias!`;
                   onChange={(e) => setFormData({...formData, herramienta: e.target.value})}
                   className="w-full bg-slate-950 border border-white/10 rounded-xl px-4 py-2.5 text-white focus:outline-none focus:border-yellow-500 focus:ring-1 focus:ring-yellow-500 transition-all"
                   placeholder="Ej: Chimera, Z3X, Octoplus..."
+                />
+              </div>
+
+              <div>
+                <label className="block text-sm font-medium text-slate-300 mb-1.5 flex items-center gap-2">
+                  <User size={16} /> Usuario de la Herramienta
+                </label>
+                <input 
+                  type="text" 
+                  required
+                  value={formData.usuario}
+                  onChange={(e) => setFormData({...formData, usuario: e.target.value})}
+                  className="w-full bg-slate-950 border border-white/10 rounded-xl px-4 py-2.5 text-white focus:outline-none focus:border-yellow-500 focus:ring-1 focus:ring-yellow-500 transition-all"
+                  placeholder="Tu nombre de usuario / ID"
                 />
               </div>
 
