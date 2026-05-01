@@ -15,7 +15,7 @@ export default function Rentals() {
 
   const handleOpenModal = (tool: RentalTool) => {
     setSelectedTool(tool);
-    setFormData({ ...formData, tiempo: '12h', metodoPago: 'CUP 🇨🇺' });
+    setFormData({ ...formData, tiempo: tool.id === 'chimera-tool' ? '24h' : '12h', metodoPago: 'CUP 🇨🇺' });
   };
 
   const handleCloseModal = () => {
@@ -29,13 +29,13 @@ export default function Rentals() {
     // Obtener el precio según el método de pago y tiempo seleccionado
     let priceStr = '0';
     if (formData.metodoPago.includes('CUP')) {
-      priceStr = selectedTool.prices.cup[formData.tiempo as keyof typeof selectedTool.prices.cup];
+      priceStr = selectedTool.prices.cup[formData.tiempo as keyof typeof selectedTool.prices.cup] || '0';
     } else if (formData.metodoPago.includes('MXN')) {
-      priceStr = selectedTool.prices.mxn[formData.tiempo as keyof typeof selectedTool.prices.mxn];
+      priceStr = selectedTool.prices.mxn[formData.tiempo as keyof typeof selectedTool.prices.mxn] || '0';
     } else if (formData.metodoPago.includes('USDT') || formData.metodoPago.includes('Zelle')) {
-      priceStr = selectedTool.prices.usdt[formData.tiempo as keyof typeof selectedTool.prices.usdt];
+      priceStr = selectedTool.prices.usdt[formData.tiempo as keyof typeof selectedTool.prices.usdt] || '0';
     } else if (formData.metodoPago.includes('Bizum')) {
-      priceStr = selectedTool.prices.bizum[formData.tiempo as keyof typeof selectedTool.prices.bizum];
+      priceStr = selectedTool.prices.bizum[formData.tiempo as keyof typeof selectedTool.prices.bizum] || '0';
     }
 
     const text = `Hola YunicellServer, deseo rentar una herramienta.
@@ -102,23 +102,43 @@ Por favor confirmarme disponibilidad. ¡Gracias!`;
                 <div className="text-xs text-slate-300 bg-slate-950/50 rounded-lg p-3 space-y-2 border border-white/5">
                   <div className="flex justify-between items-center border-b border-white/5 pb-1">
                     <span className="font-semibold text-slate-100 flex items-center gap-1">🇨🇺 CUP</span>
-                    <span className="text-right">12h: {tool.prices.cup['12h']} | 24h: {tool.prices.cup['24h']} | 48h: {tool.prices.cup['48h']}</span>
+                    <span className="text-right">
+                      {tool.prices.cup['12h'] ? `12h: ${tool.prices.cup['12h']} | ` : ''}
+                      {tool.prices.cup['24h'] ? `24h: ${tool.prices.cup['24h']} | ` : ''}
+                      {tool.prices.cup['48h'] ? `48h: ${tool.prices.cup['48h']}` : ''}
+                    </span>
                   </div>
                   <div className="flex justify-between items-center border-b border-white/5 pb-1">
                     <span className="font-semibold text-slate-100 flex items-center gap-1">🇲🇽 MXN</span>
-                    <span className="text-right">12h: {tool.prices.mxn['12h']} | 24h: {tool.prices.mxn['24h']} | 48h: {tool.prices.mxn['48h']}</span>
+                    <span className="text-right">
+                      {tool.prices.mxn['12h'] ? `12h: ${tool.prices.mxn['12h']} | ` : ''}
+                      {tool.prices.mxn['24h'] ? `24h: ${tool.prices.mxn['24h']} | ` : ''}
+                      {tool.prices.mxn['48h'] ? `48h: ${tool.prices.mxn['48h']}` : ''}
+                    </span>
                   </div>
                   <div className="flex justify-between items-center border-b border-white/5 pb-1">
                     <span className="font-semibold text-slate-100 flex items-center gap-1">🪙 USDT</span>
-                    <span className="text-right">12h: {tool.prices.usdt['12h']} | 24h: {tool.prices.usdt['24h']} | 48h: {tool.prices.usdt['48h']}</span>
+                    <span className="text-right">
+                      {tool.prices.usdt['12h'] ? `12h: ${tool.prices.usdt['12h']} | ` : ''}
+                      {tool.prices.usdt['24h'] ? `24h: ${tool.prices.usdt['24h']} | ` : ''}
+                      {tool.prices.usdt['48h'] ? `48h: ${tool.prices.usdt['48h']}` : ''}
+                    </span>
                   </div>
                   <div className="flex justify-between items-center border-b border-white/5 pb-1">
                     <span className="font-semibold text-slate-100 flex items-center gap-1">🇪🇸 Bizum</span>
-                    <span className="text-right">12h: {tool.prices.bizum['12h']} | 24h: {tool.prices.bizum['24h']} | 48h: {tool.prices.bizum['48h']}</span>
+                    <span className="text-right">
+                      {tool.prices.bizum['12h'] ? `12h: ${tool.prices.bizum['12h']} | ` : ''}
+                      {tool.prices.bizum['24h'] ? `24h: ${tool.prices.bizum['24h']} | ` : ''}
+                      {tool.prices.bizum['48h'] ? `48h: ${tool.prices.bizum['48h']}` : ''}
+                    </span>
                   </div>
                   <div className="flex justify-between items-center pt-1">
                     <span className="font-semibold text-slate-100 flex items-center gap-1">🇺🇸 Zelle</span>
-                    <span className="text-right">12h: {tool.prices.usdt['12h']} | 24h: {tool.prices.usdt['24h']} | 48h: {tool.prices.usdt['48h']}</span>
+                    <span className="text-right">
+                      {tool.prices.usdt['12h'] ? `12h: ${tool.prices.usdt['12h']} | ` : ''}
+                      {tool.prices.usdt['24h'] ? `24h: ${tool.prices.usdt['24h']} | ` : ''}
+                      {tool.prices.usdt['48h'] ? `48h: ${tool.prices.usdt['48h']}` : ''}
+                    </span>
                   </div>
                 </div>
               </div>
@@ -228,7 +248,7 @@ Por favor confirmarme disponibilidad. ¡Gracias!`;
                       onChange={(e) => setFormData({...formData, tiempo: e.target.value})}
                       className="w-full bg-slate-950 border border-white/10 rounded-xl px-4 py-2.5 text-white focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 transition-all appearance-none"
                     >
-                      <option value="12h">12 Horas</option>
+                      {selectedTool.prices.cup['12h'] && <option value="12h">12 Horas</option>}
                       <option value="24h">24 Horas</option>
                       <option value="48h">48 Horas</option>
                     </select>

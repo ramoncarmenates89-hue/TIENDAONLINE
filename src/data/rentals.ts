@@ -1,8 +1,8 @@
 export interface RentalPrices {
-  cup: { '12h': string; '24h': string; '48h': string };
-  mxn: { '12h': string; '24h': string; '48h': string };
-  usdt: { '12h': string; '24h': string; '48h': string };
-  bizum: { '12h': string; '24h': string; '48h': string };
+  cup: { '12h'?: string; '24h'?: string; '48h': string };
+  mxn: { '12h'?: string; '24h'?: string; '48h': string };
+  usdt: { '12h'?: string; '24h'?: string; '48h': string };
+  bizum: { '12h'?: string; '24h'?: string; '48h': string };
 }
 
 export interface RentalTool {
@@ -27,6 +27,13 @@ const typeBPrices: RentalPrices = {
   bizum: { '12h': '10', '24h': '12.50', '48h': '15' },
 };
 
+const chimeraPrices: RentalPrices = {
+  cup: { '24h': '5000', '48h': '6500' },
+  mxn: { '24h': '180', '48h': '250' },
+  usdt: { '48h': '10' },
+  bizum: { '24h': '10', '48h': '15' },
+};
+
 const typeCPrices: RentalPrices = {
   cup: { '12h': '3000', '24h': '4000', '48h': '5000' },
   mxn: { '12h': '150', '24h': '200', '48h': '250' },
@@ -41,6 +48,13 @@ const typeDPrices: RentalPrices = {
   bizum: { '12h': '10', '24h': '12.50', '48h': '15' },
 };
 
+const typeChimeraPrices: RentalPrices = {
+  cup: { '24h': '4000', '48h': '5000' },
+  mxn: { '24h': '200', '48h': '250' },
+  usdt: { '24h': '9.50', '48h': '10' },
+  bizum: { '24h': '12.50', '48h': '15' },
+};
+
 export const rentalTools: RentalTool[] = [
   { id: 'ts-tool', name: 'Ts Tool', prices: typeBPrices, color: 'from-rose-500 to-red-400', downloadUrl: 'https://drive.google.com/drive/folders/1tgz5A2EE1Lo7LwxF9vSB93O3XshnnFMi' },
   { id: 'dft-pro', name: 'DFT Pro', prices: typeAPrices, color: 'from-blue-500 to-cyan-400', downloadUrl: 'https://www.dftpro.com/#downloads-section' },
@@ -48,7 +62,7 @@ export const rentalTools: RentalTool[] = [
   { id: 'sigma-plus', name: 'Sigma Plus', prices: typeCPrices, color: 'from-violet-500 to-purple-500', downloadUrl: 'https://sigmakey.com/es/downloads/software' },
   { id: 'tsm-tool', name: 'TSM Tool', prices: typeAPrices, color: 'from-cyan-500 to-blue-400', downloadUrl: 'https://tsm-tool.com/download' },
   { id: 'eft-pro', name: 'EFT Pro', prices: typeAPrices, color: 'from-green-500 to-emerald-400', downloadUrl: 'https://eftprodongle.com/download-setup' },
-  { id: 'chimera-tool', name: 'Chimera Tool', prices: typeBPrices, color: 'from-orange-500 to-red-500', downloadUrl: 'https://chimeratool.com/es/download' },
+  { id: 'chimera-tool', name: 'Chimera Tool', prices: chimeraPrices, color: 'from-orange-500 to-red-500', downloadUrl: 'https://chimeratool.com/es/download' },
   { id: 'pandora-tool', name: 'Pandora Tool', prices: typeBPrices, color: 'from-purple-500 to-pink-500', downloadUrl: 'https://z3x--team-com.translate.goog/download/?_x_tr_sl=en&_x_tr_tl=es&_x_tr_hl=es&_x_tr_pto=tc' },
   { id: 'amt-tool', name: 'AMT Tool', prices: typeAPrices, color: 'from-indigo-500 to-blue-500', downloadUrl: 'https://androidmultitool.com' },
   { id: 'awt-tool', name: 'AWT Tool', prices: typeAPrices, color: 'from-teal-500 to-green-400', downloadUrl: 'https://androidwintool.com/download' },
