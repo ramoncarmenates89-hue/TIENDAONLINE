@@ -122,8 +122,8 @@ export default function Home() {
             >
               <div className="relative rounded-2xl overflow-hidden border border-white/10 bg-slate-900/50 backdrop-blur-sm p-2 aspect-square">
                 <img 
-                  src="https://images.unsplash.com/photo-1597872200969-2b65d56bd16b?auto=format&fit=crop&q=80&w=1000" 
-                  alt="Técnico reparando celular" 
+                  src="/images/software-repair-world.png" 
+                  alt="Software de celulares a nivel mundial" 
                   className="w-full h-full object-cover rounded-xl opacity-80"
                 />
                 {/* Floating badge */}
