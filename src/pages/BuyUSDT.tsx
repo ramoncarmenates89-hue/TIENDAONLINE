@@ -16,7 +16,7 @@ const TetherIcon = ({ className, size }: { className?: string, size?: number }) 
 );
 
 const rates = {
-  'CUP (Transfermóvil/Enzona) 🇨🇺': 670,
+  'CUP (Transfermóvil/Enzona) 🇨🇺': 660,
   'MXN 🇲🇽': 20,
   'Bizum 🇪🇸': 1.60,
   'Zelle 🇺🇸': 1.06

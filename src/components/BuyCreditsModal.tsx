@@ -13,7 +13,7 @@ export default function BuyCreditsModal({ isOpen, onClose }: { isOpen: boolean; 
   });
 
   const rates = {
-    'CUP 🇨🇺': 670,
+    'CUP 🇨🇺': 660,
     'MXN 🇲🇽': 20,
     'Bizum 🇪🇸': 1.60,
     'USDT 🪙': 1,
