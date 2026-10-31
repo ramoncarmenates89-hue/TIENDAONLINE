@@ -9,6 +9,7 @@ import BuyUSDT from './BuyUSDT';
 import Services from './Services';
 import BuyCreditsModal from '../components/BuyCreditsModal';
 import RemoteWorkModal from '../components/RemoteWorkModal';
+import XiaomiFRPBanner from '../components/XiaomiFRPBanner';
 
 export default function Home() {
   const [isCreditsModalOpen, setIsCreditsModalOpen] = useState(false);
@@ -151,6 +152,11 @@ export default function Home() {
       {/* MOBILedit Forensic Ultra Banner */}
       <div id="mobile-edit" className="bg-slate-900/30 border-y border-white/5">
         <MobileditBanner />
+      </div>
+
+      {/* Xiaomi FRP Banner */}
+      <div id="xiaomi-frp" className="bg-slate-950">
+        <XiaomiFRPBanner />
       </div>
 
       {/* Renta de Herramientas Section */}

@@ -13,6 +13,7 @@ export default function Navbar() {
     { name: 'Software & Drivers', path: '/#descargas' },
     { name: 'Comprar USDT', path: '/#usdt' },
     { name: 'Archivos & iCloud', path: '/#servicios' },
+    { name: 'FRP Xiaomi', path: '/#xiaomi-frp' },
   ];
 
   const handleNavClick = (path: string) => {

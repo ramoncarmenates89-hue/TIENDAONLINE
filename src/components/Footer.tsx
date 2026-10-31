@@ -47,6 +47,9 @@ export default function Footer() {
                 <a href="/#servicios" className="text-slate-400 hover:text-blue-400 text-sm transition-colors">Archivos & iCloud</a>
               </li>
               <li>
+                <a href="/#xiaomi-frp" className="text-slate-400 hover:text-blue-400 text-sm transition-colors">FRP Xiaomi</a>
+              </li>
+              <li>
                 <a href="https://wa.me/34634181266" target="_blank" rel="noopener noreferrer" className="text-slate-400 hover:text-blue-400 text-sm transition-colors">Soporte Técnico</a>
               </li>
             </ul>
