@@ -3,6 +3,7 @@ import { motion } from 'framer-motion';
 import { ArrowRight, Cpu, Wrench, Zap, ShieldCheck, Coins, MonitorSmartphone, Users } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import Rentals from './Rentals';
+import MobileditBanner from '../components/MobileditBanner';
 import Downloads from './Downloads';
 import BuyUSDT from './BuyUSDT';
 import Services from './Services';
@@ -44,37 +45,67 @@ export default function Home() {
         <div className="absolute top-0 right-0 -mr-20 -mt-20 w-96 h-96 rounded-full bg-blue-500/10 blur-3xl"></div>
         <div className="absolute bottom-0 left-0 -ml-20 -mb-20 w-80 h-80 rounded-full bg-cyan-500/10 blur-3xl"></div>
 
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <div className="flex flex-col items-center text-center">
             <motion.div 
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
-              className="max-w-2xl"
+              className="w-full"
             >
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-500/10 border border-blue-500/20 text-blue-400 text-sm font-medium mb-6">
+              <div className="inline-flex items-center justify-center gap-2 px-3 py-1 rounded-full bg-blue-500/10 border border-blue-500/20 text-blue-400 text-sm font-medium mb-6">
                 <span className="relative flex h-2 w-2">
                   <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-75"></span>
                   <span className="relative inline-flex rounded-full h-2 w-2 bg-blue-500"></span>
                 </span>
                 Servicios de Servidor Activos 24/7
               </div>
-              <h1 className="text-5xl lg:text-6xl font-bold tracking-tight mb-6 leading-tight">
+              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight mb-10 leading-tight">
                 <span className="inline-block animate-pulse">📱</span> La plataforma integral para <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-300">técnicos de celulares en software.</span>
               </h1>
-              <div className="text-lg text-slate-300 mb-8 leading-relaxed space-y-3">
-                <p className="flex items-center gap-2"><span className="text-xl">⚡</span> Renta de las herramientas más potentes del mercado</p>
-                <p className="flex items-center gap-2"><span className="text-xl">💳</span> Compra de créditos para herramientas</p>
-                <p className="flex items-center gap-2"><span className="text-xl">📂</span> Archivos premium (Halabtech)</p>
-                <p className="flex items-center gap-2"><span className="text-xl">💱</span> Compra de USDT con distintos métodos de pago</p>
-                <p className="flex items-center gap-2"><span className="text-xl">🛠️</span> Soporte gratis de programas, drivers y servicios</p>
-                <p className="flex items-center gap-2"><span className="text-xl">🌐</span> Trabajos remotos a tu alcance</p>
-                <p className="flex items-center gap-2"><span className="text-xl">🤝</span> Si no sabes, no te preocupes: nosotros lo hacemos por ti</p>
-                <p className="flex items-center gap-2"><span className="text-xl">🚀</span> Recursos y soluciones especializadas que optimizan tu taller</p>
-                <p className="flex items-center gap-2"><span className="text-xl">⭐</span> Elevan la calidad de tus servicios y te mantienen siempre actualizado en el mundo de la reparación móvil.</p>
+
+              {/* Banner Image */}
+              <motion.div 
+                initial={{ opacity: 0, scale: 0.95 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.6, delay: 0.2 }}
+                className="relative w-full mb-12"
+              >
+                <div className="relative rounded-2xl overflow-hidden border border-white/10 bg-slate-900/50 backdrop-blur-sm p-2">
+                  <img 
+                    src="/images/software-repair-world.png" 
+                    alt="Software de celulares a nivel mundial" 
+                    className="w-full h-[300px] sm:h-[400px] lg:h-[500px] object-cover rounded-xl opacity-80"
+                    onError={(e) => {
+                      (e.target as HTMLImageElement).src = "https://images.unsplash.com/photo-1597872200969-2b65d56bd16b?auto=format&fit=crop&q=80&w=1200";
+                    }}
+                  />
+                  {/* Floating badge */}
+                  <div className="absolute bottom-6 right-6 sm:bottom-8 sm:right-8 bg-slate-900/90 backdrop-blur-md border border-white/10 p-4 rounded-xl shadow-2xl flex items-center gap-4 text-left">
+                    <div className="w-12 h-12 bg-[#25D366]/20 rounded-full flex items-center justify-center">
+                      <Zap className="w-6 h-6 text-[#25D366]" />
+                    </div>
+                    <div>
+                      <p className="text-sm text-slate-400 font-medium">Soporte Rápido</p>
+                      <p className="text-white font-bold">+34 634 18 12 66</p>
+                    </div>
+                  </div>
+                </div>
+              </motion.div>
+
+              <div className="text-lg text-slate-300 mb-10 leading-relaxed space-y-3 text-left max-w-2xl mx-auto bg-slate-900/40 p-6 rounded-2xl border border-white/5">
+                <p className="flex items-center gap-3"><span className="text-xl">⚡</span> Renta de las herramientas más potentes del mercado</p>
+                <p className="flex items-center gap-3"><span className="text-xl">💳</span> Compra de créditos para herramientas</p>
+                <p className="flex items-center gap-3"><span className="text-xl">📂</span> Archivos premium (Halabtech)</p>
+                <p className="flex items-center gap-3"><span className="text-xl">💱</span> Compra de USDT con distintos métodos de pago</p>
+                <p className="flex items-center gap-3"><span className="text-xl">🛠️</span> Soporte gratis de programas, drivers y servicios</p>
+                <p className="flex items-center gap-3"><span className="text-xl">🌐</span> Trabajos remotos a tu alcance</p>
+                <p className="flex items-center gap-3"><span className="text-xl">🤝</span> Si no sabes, no te preocupes: nosotros lo hacemos por ti</p>
+                <p className="flex items-center gap-3"><span className="text-xl">🚀</span> Recursos y soluciones especializadas que optimizan tu taller</p>
+                <p className="flex items-center gap-3"><span className="text-xl">⭐</span> Elevan la calidad de tus servicios y te mantienen siempre actualizado en el mundo de la reparación móvil.</p>
               </div>
               
-              <div className="flex flex-col sm:flex-row flex-wrap gap-4">
+              <div className="flex flex-col sm:flex-row flex-wrap justify-center gap-4 mb-8">
                 <a 
                   href="#renta"
                   className="inline-flex justify-center items-center gap-2 bg-blue-600 hover:bg-blue-500 text-white px-8 py-4 rounded-xl font-semibold transition-all hover:shadow-[0_0_20px_rgba(37,99,235,0.4)]"
@@ -107,40 +138,20 @@ export default function Home() {
                 </a>
               </div>
               
-              <div className="mt-6 bg-slate-900/50 border border-white/10 p-4 rounded-xl backdrop-blur-sm">
+              <div className="bg-slate-900/50 border border-white/10 p-6 rounded-xl backdrop-blur-sm max-w-3xl mx-auto text-left">
                 <p className="text-sm text-slate-300 leading-relaxed">
                   <span className="text-[#25D366] font-bold">¡Comunidad Activa!</span> Nuestro grupo de WhatsApp cuenta con <span className="text-white font-bold">más de 600 miembros de más de 10 países</span>. Únete para compartir conocimientos, brindar apoyo mutuo y encontrar soluciones rápidas entre colegas técnicos.
                 </p>
               </div>
             </motion.div>
-
-            <motion.div 
-              initial={{ opacity: 0, scale: 0.9 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.6, delay: 0.2 }}
-              className="relative hidden lg:block"
-            >
-              <div className="relative rounded-2xl overflow-hidden border border-white/10 bg-slate-900/50 backdrop-blur-sm p-2 aspect-square">
-                <img 
-                  src="/images/software-repair-world.png" 
-                  alt="Software de celulares a nivel mundial" 
-                  className="w-full h-full object-cover rounded-xl opacity-80"
-                />
-                {/* Floating badge */}
-                <div className="absolute bottom-8 -left-8 bg-slate-900/90 backdrop-blur-md border border-white/10 p-4 rounded-xl shadow-2xl flex items-center gap-4">
-                  <div className="w-12 h-12 bg-[#25D366]/20 rounded-full flex items-center justify-center">
-                    <Zap className="w-6 h-6 text-[#25D366]" />
-                  </div>
-                  <div>
-                    <p className="text-sm text-slate-400 font-medium">Soporte Rápido</p>
-                    <p className="text-white font-bold">+34 634 18 12 66</p>
-                  </div>
-                </div>
-              </div>
-            </motion.div>
           </div>
         </div>
       </section>
+
+      {/* MOBILedit Forensic Ultra Banner */}
+      <div id="mobile-edit" className="bg-slate-900/30 border-y border-white/5">
+        <MobileditBanner />
+      </div>
 
       {/* Renta de Herramientas Section */}
       <div id="renta" className="bg-slate-950">

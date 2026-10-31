@@ -71,7 +71,7 @@ export const rentalTools: RentalTool[] = [
   { id: 'tfm-tool', name: 'TFM Tool', prices: typeAPrices, color: 'from-fuchsia-500 to-purple-500', downloadUrl: 'https://tfmtool.com/downloads' },
   { id: 'samsung-tool', name: 'Samsung Tool Online', prices: typeBPrices, color: 'from-blue-600 to-indigo-600', downloadUrl: 'https://z3x--team-com.translate.goog/download/?_x_tr_sl=en&_x_tr_tl=es&_x_tr_hl=es&_x_tr_pto=tc' },
   { id: 'mdmfix-tool', name: 'MDMFix Tool', prices: typeCPrices, color: 'from-emerald-500 to-teal-500', downloadUrl: 'https://mdmfixtool.com/' },
-  { id: 'hydra-tool', name: 'HYDRA TOOL', prices: typeDPrices, color: 'from-sky-500 to-blue-500', downloadUrl: 'https://www.hydradongle.com/download/software' },
-  { id: 'griffin-unlocker', name: 'GRIFFIN UNLOCKER', prices: typeDPrices, color: 'from-amber-500 to-yellow-400', downloadUrl: 'https://griffin-unlocker.com/download.html' },
+  { id: 'hydra-tool', name: 'Hydra Tool', prices: typeDPrices, color: 'from-sky-500 to-blue-500', downloadUrl: 'https://www.hydradongle.com/download/software' },
+  { id: 'griffin-unlocker', name: 'Griffin Unlocker', prices: typeDPrices, color: 'from-amber-500 to-yellow-400', downloadUrl: 'https://griffin-unlocker.com/download.html' },
   { id: 'rtc-tool', name: 'RTC Tool', prices: typeAPrices, color: 'from-pink-500 to-rose-500', downloadUrl: 'https://rtc-tool.com' },
 ];

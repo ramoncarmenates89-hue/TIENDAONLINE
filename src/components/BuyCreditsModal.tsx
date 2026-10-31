@@ -6,14 +6,14 @@ export default function BuyCreditsModal({ isOpen, onClose }: { isOpen: boolean; 
   const [formData, setFormData] = useState({
     nombre: '',
     numero: '',
-    usuario: '',
     herramienta: '',
+    usuario: '',
     cantidad: '',
     metodoPago: 'CUP 🇨🇺'
   });
 
   const rates = {
-    'CUP 🇨🇺': 660,
+    'CUP 🇨🇺': 1300,
     'MXN 🇲🇽': 20,
     'Bizum 🇪🇸': 1.60,
     'USDT 🪙': 1,
@@ -60,9 +60,9 @@ Por favor confirmarme disponibilidad. ¡Gracias!`;
             initial={{ opacity: 0, scale: 0.95, y: 20 }}
             animate={{ opacity: 1, scale: 1, y: 0 }}
             exit={{ opacity: 0, scale: 0.95, y: 20 }}
-            className="relative w-full max-w-md bg-slate-900 border border-yellow-500/30 rounded-2xl shadow-2xl overflow-hidden"
+            className="relative w-full max-w-md bg-slate-900 border border-yellow-500/30 rounded-2xl shadow-2xl overflow-hidden max-h-[90vh] overflow-y-auto"
           >
-            <div className="flex justify-between items-center p-6 border-b border-white/10 bg-slate-950/50">
+            <div className="flex justify-between items-center p-6 border-b border-white/10 bg-slate-950/50 sticky top-0 z-10">
               <h2 className="text-xl font-bold flex items-center gap-2 text-white">
                 <Coins className="text-yellow-400" size={24} />
                 Compra de Créditos
