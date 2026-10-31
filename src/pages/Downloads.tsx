@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { Download, MonitorSmartphone, Monitor, Usb, HardDriveDownload, Cpu, Settings, CheckCircle2 } from 'lucide-react';
+import { Download, MonitorSmartphone, Monitor, Usb, HardDriveDownload, Cpu, Settings, CheckCircle2, Network, Cable } from 'lucide-react';
 
 export default function Downloads() {
   const tools = [
@@ -29,6 +29,24 @@ export default function Downloads() {
       color: 'from-green-500/20 to-green-900/10',
       borderColor: 'hover:border-green-500/50',
       btnColor: 'bg-green-600 hover:bg-green-500 shadow-green-500/25'
+    },
+    {
+      name: 'Radmin VPN',
+      description: 'Crea una red privada virtual segura para conexiones remotas directas.',
+      url: 'https://www.mediafire.com/file/pe5apdo8hnxnaiw/Radmin_VPN_2.1.4951.1%25281%2529.zip/file',
+      icon: <Network size={80} className="text-purple-500 animate-pulse drop-shadow-lg" />,
+      color: 'from-purple-500/20 to-purple-900/10',
+      borderColor: 'hover:border-purple-500/50',
+      btnColor: 'bg-purple-600 hover:bg-purple-500 shadow-purple-500/25'
+    },
+    {
+      name: 'VirtualHere Client',
+      description: 'Comparte y accede a dispositivos USB a través de la red como si estuvieran locales.',
+      url: 'https://www.mediafire.com/file/k9aauil83xvdh40/vhui64.zip/file',
+      icon: <Cable size={80} className="text-amber-500 animate-pulse drop-shadow-lg" />,
+      color: 'from-amber-500/20 to-amber-900/10',
+      borderColor: 'hover:border-amber-500/50',
+      btnColor: 'bg-amber-600 hover:bg-amber-500 shadow-amber-500/25'
     }
   ];
 
@@ -63,7 +81,7 @@ export default function Downloads() {
           <h2 className="text-3xl font-bold text-white">Software Remoto</h2>
         </div>
         
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
           {tools.map((tool, index) => (
             <motion.div
               key={tool.name}
