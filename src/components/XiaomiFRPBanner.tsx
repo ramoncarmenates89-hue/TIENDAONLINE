@@ -65,7 +65,7 @@ Por favor confirmarme disponibilidad y precio. ¡Gracias!`;
           <div className="lg:w-1/2 w-full h-80 sm:h-96 lg:h-auto min-h-[400px] relative bg-slate-900 flex items-center justify-center p-6 lg:p-12 border-l border-white/5 order-1 lg:order-2">
             <div className="absolute inset-0 bg-gradient-to-bl from-orange-500/10 to-amber-500/10 opacity-50"></div>
             <motion.img 
-              src="https://i.imgur.com/iukKI4v.jpg" 
+              src="https://i.imgur.com/uSsQE4a.png" 
               alt="FRP Xiaomi Todos los Modelos" 
               initial={{ opacity: 0, scale: 1.05 }}
               whileInView={{ opacity: 1, scale: 1 }}
